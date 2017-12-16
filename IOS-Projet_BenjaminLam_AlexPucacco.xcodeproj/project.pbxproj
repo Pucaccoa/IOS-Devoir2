@@ -13,6 +13,7 @@
 		D89C9D671FE598F6009EE5BD /* IOS_Projet_BenjaminLam_AlexPucacco.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D89C9D651FE598F6009EE5BD /* IOS_Projet_BenjaminLam_AlexPucacco.xcdatamodeld */; };
 		D89C9D691FE598F6009EE5BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D89C9D681FE598F6009EE5BD /* Assets.xcassets */; };
 		D89C9D6C1FE598F6009EE5BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D89C9D6A1FE598F6009EE5BD /* LaunchScreen.storyboard */; };
+		D89C9D741FE5A0AF009EE5BD /* BudgetList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89C9D731FE5A0AF009EE5BD /* BudgetList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		D89C9D681FE598F6009EE5BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D89C9D6B1FE598F6009EE5BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D89C9D6D1FE598F6009EE5BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D89C9D731FE5A0AF009EE5BD /* BudgetList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				D89C9D6A1FE598F6009EE5BD /* LaunchScreen.storyboard */,
 				D89C9D6D1FE598F6009EE5BD /* Info.plist */,
 				D89C9D651FE598F6009EE5BD /* IOS_Projet_BenjaminLam_AlexPucacco.xcdatamodeld */,
+				D89C9D731FE5A0AF009EE5BD /* BudgetList.swift */,
 			);
 			path = "IOS-Projet_BenjaminLam_AlexPucacco";
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 			files = (
 				D89C9D611FE598F6009EE5BD /* ViewController.swift in Sources */,
 				D89C9D671FE598F6009EE5BD /* IOS_Projet_BenjaminLam_AlexPucacco.xcdatamodeld in Sources */,
+				D89C9D741FE5A0AF009EE5BD /* BudgetList.swift in Sources */,
 				D89C9D5F1FE598F6009EE5BD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
