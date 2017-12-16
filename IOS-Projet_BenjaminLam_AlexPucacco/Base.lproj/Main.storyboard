@@ -49,11 +49,46 @@
                             <outlet property="delegate" destination="Cgb-UU-XTz" id="NW7-Uf-2V8"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Budget" id="4RM-QL-6mW"/>
+                    <navigationItem key="navigationItem" title="Budget" id="4RM-QL-6mW">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="uIO-mf-wLj"/>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="5Tu-DM-BaF" kind="showDetail" identifier="Detail" id="mYd-gY-M8T"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WHn-PY-eLy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="156" y="9"/>
+            <point key="canvasLocation" x="353" y="-6"/>
+        </scene>
+        <!--DetailBudget-->
+        <scene sceneID="3kf-pp-K4J">
+            <objects>
+                <viewController title="DetailBudget" id="5Tu-DM-BaF" customClass="DetailBudgetController" customModule="IOS_Projet_BenjaminLam_AlexPucacco" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ykf-iX-O2V"/>
+                        <viewControllerLayoutGuide type="bottom" id="Qgt-3X-szn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Uyg-c6-r1L">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dPX-hS-VeA">
+                                <rect key="frame" x="166" y="333" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="textLabel" destination="dPX-hS-VeA" id="fE0-DW-Qfw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ReC-fT-YXF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1126" y="-6"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ktq-Q6-Df9">
