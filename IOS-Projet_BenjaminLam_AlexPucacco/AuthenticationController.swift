@@ -53,6 +53,9 @@ class AuthenticationController : UIViewController {
         session.dataTask(with: request) { (data, response, error) in
             if (response as! HTTPURLResponse).statusCode == 200 {
                 print("Login success!")
+                let preferences = UserDefaults.standard
+                preferences.set(username, forKey: "username")
+                print(preferences.string(forKey: "username"))
                 OperationQueue.main.addOperation {
                         self.performSegue(withIdentifier: "ShowMain", sender: self)
                     }
