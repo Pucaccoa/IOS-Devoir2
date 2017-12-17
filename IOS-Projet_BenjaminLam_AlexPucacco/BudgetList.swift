@@ -20,6 +20,11 @@ class BudgetList : UITableViewController
     var catList : [Category] = [];
     //var listComplete : [] =
     
+    @IBAction func LogOut(_ sender: Any) {
+        let preferences = UserDefaults.standard
+        preferences.removeObject(forKey: "username")
+        performSegue(withIdentifier: "LogOut", sender: self)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
