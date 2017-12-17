@@ -14,11 +14,12 @@ class BudgetList : UITableViewController
 {
     var list = ["budget1", "budget2","budget3"];
     var cat = ["Food", "Shopping", "Hobby"];
-    
+    var baseUrl = "http://budgetmoica.azurewebsites.net";
     let cellReuseIdentifier = "Budget";
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getData();
         //self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
     }
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -68,6 +69,46 @@ class BudgetList : UITableViewController
             
         }
         
+    }
+    func getData()
+    {
+        let config = URLSessionConfiguration.default // Session Configuration
+        let session = URLSession(configuration: config) // Load configuration into Session
+        let preferences = UserDefaults.standard
+        let username = preferences.string(forKey: "username");
+        
+        let url = URL(string: self.baseUrl + "/item/list/" + username!)!
+        
+        let task = session.dataTask(with: url, completionHandler: {
+            (data, response, error) in
+            print("Hello3")
+            if error != nil {
+                
+                print(error!.localizedDescription)
+                
+            } else {
+                
+                do {
+                    
+                    if let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [String: Any]
+                    {
+                        
+                        //Implement your logic
+                        print(json)
+                        
+                    }
+                    
+                } catch {
+                    
+                    print("error in JSONSerialization")
+                    
+                }
+                
+                
+            }
+            
+        })
+        task.resume()
     }
     
     
