@@ -11,11 +11,11 @@ import UIKit
 
 class DetailBudgetController : UIViewController
 {
-    var budget: String!
+    var budget: Item!
     @IBOutlet weak var textLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad();
-        textLabel.text? = budget;
+        textLabel.text? = budget.name;
         print("Hello")
         
     }
