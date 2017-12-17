@@ -15,14 +15,17 @@ class BudgetList : UITableViewController
     var list = ["budget1", "budget2","budget3"];
     var cat = ["Food", "Shopping", "Hobby"];
     
+    let cellReuseIdentifier = "Budget";
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        //self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
     }
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return list.count; //Modifier
+        return 1; //Modifier
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2; //modifier ici
+        return list.count; //modifier ici
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -42,6 +45,16 @@ class BudgetList : UITableViewController
         
         
     }
+    
+   /*
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: "Detail", sender: self);
+        
+        
+     
+    }*/
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let idSegue  = segue.identifier;
         if(idSegue == "Detail")
@@ -50,8 +63,9 @@ class BudgetList : UITableViewController
             let index = tableView.indexPath(for: cellule!)?.row;
             let destination  = segue.destination as? DetailBudgetController
             let budgetTapote = list[index!];
+            print(list[index!])
             destination?.budget = budgetTapote
-            print("Hello2")
+            
         }
         
     }
