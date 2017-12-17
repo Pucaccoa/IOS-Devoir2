@@ -18,6 +18,8 @@
 		D89C9D6C1FE598F6009EE5BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D89C9D6A1FE598F6009EE5BD /* LaunchScreen.storyboard */; };
 		D89C9D741FE5A0AF009EE5BD /* BudgetList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89C9D731FE5A0AF009EE5BD /* BudgetList.swift */; };
 		D89C9D761FE5B6D5009EE5BD /* DetailBudgetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89C9D751FE5B6D5009EE5BD /* DetailBudgetController.swift */; };
+		D89D5DFB1FE6ED0500E6889F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89D5DFA1FE6ED0500E6889F /* Item.swift */; };
+		D89D5DFD1FE700B900E6889F /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89D5DFC1FE700B900E6889F /* Category.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		D89C9D6D1FE598F6009EE5BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D89C9D731FE5A0AF009EE5BD /* BudgetList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetList.swift; sourceTree = "<group>"; };
 		D89C9D751FE5B6D5009EE5BD /* DetailBudgetController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailBudgetController.swift; sourceTree = "<group>"; };
+		D89D5DFA1FE6ED0500E6889F /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		D89D5DFC1FE700B900E6889F /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +55,8 @@
 			isa = PBXGroup;
 			children = (
 				432600CD1FE6DCD600B1A775 /* ItemController.swift */,
+				D89D5DFA1FE6ED0500E6889F /* Item.swift */,
+				D89D5DFC1FE700B900E6889F /* Category.swift */,
 			);
 			name = Item;
 			sourceTree = "<group>";
@@ -171,6 +177,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D89C9D611FE598F6009EE5BD /* ViewController.swift in Sources */,
+				D89D5DFD1FE700B900E6889F /* Category.swift in Sources */,
+				D89D5DFB1FE6ED0500E6889F /* Item.swift in Sources */,
 				D89C9D671FE598F6009EE5BD /* IOS_Projet_BenjaminLam_AlexPucacco.xcdatamodeld in Sources */,
 				432600CE1FE6DCD600B1A775 /* ItemController.swift in Sources */,
 				D89C9D741FE5A0AF009EE5BD /* BudgetList.swift in Sources */,
