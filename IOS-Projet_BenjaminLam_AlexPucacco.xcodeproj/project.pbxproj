@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43DD93D61FE5DAB300D38336 /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DD93D51FE5DAB300D38336 /* RegistrationController.swift */; };
+		43E0D49F1FE5C4A700E0D9D9 /* AuthenticationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E0D49E1FE5C4A700E0D9D9 /* AuthenticationController.swift */; };
 		D89C9D5F1FE598F6009EE5BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89C9D5E1FE598F6009EE5BD /* AppDelegate.swift */; };
 		D89C9D611FE598F6009EE5BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89C9D601FE598F6009EE5BD /* ViewController.swift */; };
 		D89C9D641FE598F6009EE5BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D89C9D621FE598F6009EE5BD /* Main.storyboard */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		43DD93D51FE5DAB300D38336 /* RegistrationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
+		43E0D49E1FE5C4A700E0D9D9 /* AuthenticationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationController.swift; sourceTree = "<group>"; };
 		D89C9D5B1FE598F6009EE5BD /* IOS-Projet_BenjaminLam_AlexPucacco.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IOS-Projet_BenjaminLam_AlexPucacco.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D89C9D5E1FE598F6009EE5BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D89C9D601FE598F6009EE5BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -39,6 +43,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		43E0D49D1FE5C45C00E0D9D9 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				43E0D49E1FE5C4A700E0D9D9 /* AuthenticationController.swift */,
+				43DD93D51FE5DAB300D38336 /* RegistrationController.swift */,
+			);
+			name = Authentication;
+			sourceTree = "<group>";
+		};
 		D89C9D521FE598F6009EE5BD = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +71,7 @@
 		D89C9D5D1FE598F6009EE5BD /* IOS-Projet_BenjaminLam_AlexPucacco */ = {
 			isa = PBXGroup;
 			children = (
+				43E0D49D1FE5C45C00E0D9D9 /* Authentication */,
 				D89C9D5E1FE598F6009EE5BD /* AppDelegate.swift */,
 				D89C9D601FE598F6009EE5BD /* ViewController.swift */,
 				D89C9D621FE598F6009EE5BD /* Main.storyboard */,
@@ -145,6 +159,8 @@
 				D89C9D611FE598F6009EE5BD /* ViewController.swift in Sources */,
 				D89C9D671FE598F6009EE5BD /* IOS_Projet_BenjaminLam_AlexPucacco.xcdatamodeld in Sources */,
 				D89C9D741FE5A0AF009EE5BD /* BudgetList.swift in Sources */,
+				43E0D49F1FE5C4A700E0D9D9 /* AuthenticationController.swift in Sources */,
+				43DD93D61FE5DAB300D38336 /* RegistrationController.swift in Sources */,
 				D89C9D5F1FE598F6009EE5BD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,6 +323,7 @@
 				D89C9D721FE598F6009EE5BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
