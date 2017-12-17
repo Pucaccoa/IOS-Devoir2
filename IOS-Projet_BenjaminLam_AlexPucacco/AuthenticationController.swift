@@ -12,8 +12,6 @@ import UIKit
 class AuthenticationController : UIViewController {
     
     let login_url = "http://budgetmoica.azurewebsites.net/user/login/"
-    
-    var isLoggedIn = false
     var validPass = true
     var validUsername = true
     
@@ -55,14 +53,11 @@ class AuthenticationController : UIViewController {
         session.dataTask(with: request) { (data, response, error) in
             if (response as! HTTPURLResponse).statusCode == 200 {
                 print("Login success!")
-                self.isLoggedIn = true
-            }
+                OperationQueue.main.addOperation {
+                        self.performSegue(withIdentifier: "ShowMain", sender: self)
+                    }
+                }
         }.resume()
-        
-        if isLoggedIn == true {
-            performSegue(withIdentifier: "ShowMain", sender: self)
-        }
-        
     }
     
     

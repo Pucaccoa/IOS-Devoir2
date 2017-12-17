@@ -84,21 +84,17 @@ class RegistrationController : UIViewController {
             print("Error")
         }
         
-        var isRegistered = true
-        
         let session = URLSession.shared
         session.dataTask(with: request) { (data, response, error) in
             if (response as! HTTPURLResponse).statusCode == 200 {
                 print("Sign up success!")
+                OperationQueue.main.addOperation {
+                    self.performSegue(withIdentifier: "ShowLogin", sender: self)
+                }
             } else {
-                isRegistered = false
                 self.register_error.text = (error as! String)
             }
             }.resume()
-        
-        if isRegistered == true {
-            performSegue(withIdentifier: "ShowLogin", sender: self)
-        }
     }
     
     
