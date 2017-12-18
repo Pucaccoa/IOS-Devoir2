@@ -92,7 +92,7 @@ class RegistrationController : UIViewController {
                     self.performSegue(withIdentifier: "ShowLogin", sender: self)
                 }
             } else {
-                self.register_error.text = (error as! String)
+                self.register_error.text = "Error"
             }
             }.resume()
     }

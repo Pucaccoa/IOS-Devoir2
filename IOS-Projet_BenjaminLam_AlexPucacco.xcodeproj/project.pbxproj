@@ -20,6 +20,7 @@
 		D89C9D761FE5B6D5009EE5BD /* DetailBudgetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89C9D751FE5B6D5009EE5BD /* DetailBudgetController.swift */; };
 		D89D5DFB1FE6ED0500E6889F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89D5DFA1FE6ED0500E6889F /* Item.swift */; };
 		D89D5DFD1FE700B900E6889F /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89D5DFC1FE700B900E6889F /* Category.swift */; };
+		D89D5DFF1FE73FF400E6889F /* EditItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89D5DFE1FE73FF400E6889F /* EditItemController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		D89C9D751FE5B6D5009EE5BD /* DetailBudgetController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailBudgetController.swift; sourceTree = "<group>"; };
 		D89D5DFA1FE6ED0500E6889F /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		D89D5DFC1FE700B900E6889F /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		D89D5DFE1FE73FF400E6889F /* EditItemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditItemController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				432600CD1FE6DCD600B1A775 /* ItemController.swift */,
 				D89D5DFA1FE6ED0500E6889F /* Item.swift */,
 				D89D5DFC1FE700B900E6889F /* Category.swift */,
+				D89D5DFE1FE73FF400E6889F /* EditItemController.swift */,
 			);
 			name = Item;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 				43DD93D61FE5DAB300D38336 /* RegistrationController.swift in Sources */,
 				D89C9D5F1FE598F6009EE5BD /* AppDelegate.swift in Sources */,
 				D89C9D761FE5B6D5009EE5BD /* DetailBudgetController.swift in Sources */,
+				D89D5DFF1FE73FF400E6889F /* EditItemController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

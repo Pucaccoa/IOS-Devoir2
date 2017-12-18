@@ -22,6 +22,7 @@ class BudgetList : UITableViewController
     var catLoaded = false;
     var dataLodaed = false;
     
+    @IBOutlet weak var TotalLabel: UILabel!
     
     @IBAction func LogOut(_ sender: Any) {
         let preferences = UserDefaults.standard
@@ -31,28 +32,30 @@ class BudgetList : UITableViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-         getData()
+        tableView.reloadData()
+        getData()
         getCategories()
         
         //self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
     }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return catList.count; //Modifier
     }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print(listComplete)
         if(dataLodaed && catLoaded)
         {
-            return listComplete[section].count; //modifier ici
+            return listComplete[section].count; //modifi
         }
         else
         {
             return 1;
         }
     }
+    
     override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        
         if(dataLodaed && catLoaded)
         {
             var sum = Float(0);
@@ -62,14 +65,12 @@ class BudgetList : UITableViewController
             }
             if (!(sum.isEqual(to: Float(0))))
             {
-                return sum.description ; //modifier ici
+                return "Category Total : " + sum.description + "$" ; //modifier ici
             }
             else
             {
                 return nil
             }
-            
-            
         }
         return nil
     }
@@ -77,63 +78,47 @@ class BudgetList : UITableViewController
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return self.catList[section].name;
     }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
             let cell = tableView.dequeueReusableCell(withIdentifier: "Budget",
             for : indexPath)
         if(!(dataLodaed && catLoaded))
         {
-            let budget   = itemList[indexPath.row].name;
-            cell.textLabel?.text = budget
-            let amount = itemList[indexPath.row].amount
-            cell.detailTextLabel?.text = amount.description
+            return cell
             
-                    }
+        }
         else
         {
             let item = listComplete[indexPath.section][indexPath.row];
             let budget   = item.name;
             cell.textLabel?.text = budget
             let amount = item.amount
-            cell.detailTextLabel?.text = amount.description
+            cell.detailTextLabel?.text = amount.description + "$"
         }
         return cell
-
-        
-        
     }
-    
-   /*
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        performSegue(withIdentifier: "Detail", sender: self);
-        
-        
-     
-    }*/
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let idSegue  = segue.identifier;
         if(idSegue == "Detail")
         {
             let cellule = sender as? UITableViewCell;
-            let index = tableView.indexPath(for: cellule!)?.row;
+            let index = tableView.indexPath(for: cellule!);
             let destination  = segue.destination as? DetailBudgetController
-            let budgetTapote = self.itemList[index!];
-            print(self.itemList[index!].name)
-            destination?.budget = budgetTapote
-            
+            let budgetTapote = self.listComplete[index!.section][index!.row];
+            var catLoaded = false;
+            var dataLodaed = false;
+            destination?.item = budgetTapote
         }
         
     }
+    
     func getData()
     {
-        
-        
-        
         let preferences = UserDefaults.standard
         let username = preferences.string(forKey: "username");
-        print(username);
+        //print(username);
         
         let session = URLSession.shared // Load configuration into Session
         
@@ -143,18 +128,11 @@ class BudgetList : UITableViewController
         
         session.dataTask(with: request) {
             (data, response, error) in
-            print("Hello3")
-            
-            if let rep = response
-            {
-                print(rep);
-            }
             if let donnees = data
             {
                 do
                 {
                     let json  = try JSONSerialization.jsonObject(with: donnees, options: [])
-                    
                     if let array = json as? [Any]
                     {
                         for object in array
@@ -162,35 +140,24 @@ class BudgetList : UITableViewController
                             if let item = Item(json:object as! [String : Any])
                             {
                                 self.itemList.append(item)
-                                
-                                
                             }
-                            
-                            
                         }
                     }
-                    
-                    
                 }catch
                 {
                     print(error)
                     
                 }
             }
-            
             OperationQueue.main.addOperation {
                 self.dataLodaed = true
-                
                 self.createList()
+                self.cumulate()
                 self.tableView.reloadData()
-                
             }
-            
-            
         }.resume()
-        
-        
     }
+    
     func getCategories()
     {
         
@@ -202,12 +169,6 @@ class BudgetList : UITableViewController
         
         session.dataTask(with: request) {
             (data, response, error) in
-            
-            
-            if let rep = response
-            {
-                print(rep);
-            }
             if let donnees = data
             {
                 do
@@ -221,46 +182,28 @@ class BudgetList : UITableViewController
                             if let cat = Category(json:object as! [String : Any])
                             {
                                 self.catList.append(cat)
-                                
-                                
                             }
-                            
-                            
                         }
                     }
-                    
-                    
                 }catch
                 {
                     print(error)
-                    
                 }
-            }
-            for cat in self.catList
-            {
-                print (cat.name)
             }
             OperationQueue.main.addOperation {
                 self.catLoaded = true
                 
                 self.createList()
+                self.cumulate()
                 self.tableView.reloadData()
-                
-                
             }
-            
-            
             }.resume()
-
-        
-        
     }
+    
     func createList()
     {
-        
         let catList = self.catList
         let itemList = self.itemList;
-        
         let list:[Item]  = [];
         var index = 0;
         if (self.catLoaded && self.dataLodaed)
@@ -278,10 +221,19 @@ class BudgetList : UITableViewController
                 }
                 index  = index + 1;
             }
-        print(self.listComplete)
-            print("yoyoyo you have mic")
         }
     }
     
-    
+    func cumulate()
+    {
+        var sum = Float(0);
+        if (self.catLoaded && self.dataLodaed)
+        {
+            for item in self.itemList
+            {
+                sum = sum + item.amount
+            }
+            TotalLabel.text? = "Monthly Total : " + sum.description + "$"
+        }
+    }
 }
